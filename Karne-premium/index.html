@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karne Premium - Carnicería Gourmet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- En el <head> -->
+<link rel="stylesheet" href="style.css">
+<!-- Antes de </body> -->
+<script src="script.js"></script>
+
+</head>
+<body>
+  <!-- WhatsApp Fixed Button -->
+  <a href="https://wa.me/59174505984" class="whatsapp-fixed" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Header -->
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/11312/11312406.png" alt="Logo Karne Premium" class="logo pulse">
+    <h1>Karne Premium</h1>
+    <p>Carnicería gourmet con los cortes más selectos de Tarija - Calidad y tradición desde 1985</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="#productos"><i class="fas fa-utensils"></i> Productos</a></li>
+      <li><a href="#chef"><i class="fas fa-user-tie"></i> Nuestro Chef</a></li>
+      <li><a href="#pedido"><i class="fas fa-shopping-bag"></i> Pedidos</a></li>
+      <li><a href="#contacto"><i class="fas fa-map-marker-alt"></i> Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Carrito Button -->
+  <button class="btn-carrito" id="btnCarrito">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="contador-carrito" id="contadorCarrito">0</span>
+  </button>
+
+  <!-- Carrito Sidebar -->
+  <div class="carrito" id="carrito">
+    <h3>Tu Carrito <i class="fas fa-times" id="cerrarCarrito"></i></h3>
+    <div class="carrito-items" id="listaCarrito"></div>
+    <div class="carrito-total">Total: <span id="totalCarrito">0.00</span> Bs</div>
+    <div class="carrito-acciones">
+      <button class="btn-vaciar" id="vaciarCarrito">Vaciar</button>
+      <button class="btn-comprar" id="finalizarCompra">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <!-- Video Hero -->
+  <section class="video-hero" id="inicio">
+    <video autoplay muted loop>
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-butcher-cutting-meat-22139-large.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay">
+      <h2>Excelencia en cada corte</h2>
+      <p>Descubre nuestra selección de carnes maduradas y cortes premium, seleccionados artesanalmente para los paladares más exigentes</p>
+    </div>
+  </section>
+
+  <!-- Sección Origen y Valores -->
+  <section class="origen">
+    <h2>Nuestro Compromiso</h2>
+    <div class="grid-valores">
+      <div class="valor-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Origen Natural</h3>
+        <p>Nuestros animales son criados en pastizales naturales de Tarija, sin hormonas ni antibióticos, garantizando carne 100% orgánica.</p>
+      </div>
+      <div class="valor-card">
+        <i class="fas fa-clock"></i>
+        <h3>Maduración Controlada</h3>
+        <p>Cada corte pasa por nuestro proceso exclusivo de maduración en cámaras especiales entre 21 y 28 días para máxima terneza.</p>
+      </div>
+      <div class="valor-card">
+        <i class="fas fa-award"></i>
+        <h3>Certificación Premium</h3>
+        <p>Certificados por el Instituto Boliviano de Calidad Carnica con el sello Oro por nuestros estándares de excelencia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Productos -->
+  <section class="productos" id="productos">
+    <h2>Nuestros Cortes Premium</h2>
+    
+    <div class="filtros">
+      <button class="filtro-btn active" data-categoria="todos">Todos</button>
+      <button class="filtro-btn" data-categoria="res">Carne de Res</button>
+      <button class="filtro-btn" data-categoria="pollo">Pollo</button>
+      <button class="filtro-btn" data-categoria="cerdo">Cerdo</button>
+      <button class="filtro-btn" data-categoria="premium">Cortes Premium</button>
+    </div>
+    
+    <div class="grid-productos" id="gridProductos">
+      <!-- Productos se cargarán con JavaScript -->
+    </div>
+  </section>
+
+  <!-- Sección Chef -->
+  <section class="chef" id="chef">
+    <div class="chef-container">
+      <div class="chef-img">
+        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chef Juan Pérez">
+      </div>
+      <div class="chef-info">
+        <h2>Conoce a nuestro Maestro Carnicero</h2>
+        <p>Con más de 25 años de experiencia, el Chef Juan Pérez selecciona personalmente cada corte que llega a su mesa. Formado en las mejores escuelas de Argentina y Brasil, su expertise garantiza la máxima calidad en cada pieza.</p>
+        <p>"En Karne Premium no vendemos carne, ofrecemos una experiencia gastronómica. Cada corte cuenta una historia de dedicación y pasión por el arte carnicero."</p>
+        <div class="chef-firma">Chef Juan Pérez</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de Pedido -->
+  <section class="pedido" id="pedido">
+    <div class="pedido-container">
+      <h2>Realiza tu Pedido</h2>
+      <form id="formularioPedido">
+        <div class="form-group">
+          <label for="nombre">Nombre Completo</label>
+          <input type="text" id="nombre" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="direccion">Dirección de Entrega</label>
+          <input type="text" id="direccion" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Método de Entrega</label>
+          <div class="form-options">
+            <div class="form-option">
+              <input type="radio" id="delivery" name="entrega" value="delivery" checked>
+              <label for="delivery"><i class="fas fa-motorcycle form-option-icon"></i> Delivery (30 Bs)</label>
+            </div>
+            <div class="form-option">
+              <input type="radio" id="recoger" name="entrega" value="recoger">
+              <label for="recoger"><i class="fas fa-store form-option-icon"></i> Recoger en Tienda</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Empaque Premium</label>
+          <div class="form-options">
+            <div class="form-option">
+              <input type="radio" id="empaque-estandar" name="empaque" value="estandar" checked>
+              <label for="empaque-estandar"><i class="fas fa-box form-option-icon"></i> Estándar</label>
+            </div>
+            <div class="form-option">
+              <input type="radio" id="empaque-premium" name="empaque" value="premium">
+              <label for="empaque-premium"><i class="fas fa-gift form-option-icon"></i> Premium (+50 Bs)</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="notas">Notas Especiales</label>
+          <textarea id="notas" placeholder="Indicaciones especiales para tu pedido..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">
+          <i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contacto">
+    <div class="footer-container">
+      <div class="footer-info">
+        <img src="https://cdn-icons-png.flaticon.com/512/11312/11312406.png" alt="Logo Karne Premium" class="footer-logo">
+        <p>La mejor selección de carnes premium en Tarija, con estándares de calidad internacional.</p>
+        <p><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 - 19:00</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/liz.aduviri.880637" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/59174505984" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Enlaces Rápidos</h3>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#chef">Nuestro Chef</a></li>
+          <li><a href="#pedido">Cómo Pedir</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Información</h3>
+        <ul>
+          <li><a href="#">Política de Calidad</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Métodos de Pago</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-newsletter">
+        <h3>Newsletter</h3>
+        <p>Suscríbete para recibir nuestras promociones exclusivas:</p>
+        <input type="email" placeholder="Tu correo electrónico">
+        <button>Suscribirme</button>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 Karne Premium. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
