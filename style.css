@@ -4,7 +4,7 @@
   --marron: #5c3a21;
   --blanco: #fff9f0;
   --whatsapp: #25D366;
-  --textura-marmol: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+  --textura-marmol: url('https://i.pinimg.com/736x/87/70/b7/8770b7478652937e0afc91d48e427583.jpg');
 }
 
 /* Estilos Base */
@@ -362,7 +362,7 @@ nav a:hover {
   font-size: 1.5em;
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(139, 0, 0, 0.3);
-  z-index: 999;
+  z-index: 10000; /* Aumentamos este valor */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -401,7 +401,7 @@ nav a:hover {
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
   padding: 25px;
-  z-index: 998;
+  z-index: 9999; /* Aumentamos este valor */
   display: none;
   max-height: 70vh;
   overflow-y: auto;
@@ -894,4 +894,62 @@ footer {
   .form-option {
     min-width: 100%;
   }
+}
+/* Estilo para el contenedor del mapa */
+.mapa-container {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Hacer el mapa responsive */
+.mapa-container iframe {
+  width: 100%;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .mapa-container iframe {
+    height: 250px;
+  }
+}
+/* Estilos para el selector de zona */
+select {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238b0000' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+}
+
+select:focus {
+  border-color: var(--rojo-vino);
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+  outline: none;
+}
+
+optgroup {
+  font-weight: bold;
+  color: var(--rojo-vino);
+}
+
+option {
+  font-weight: normal;
+}
+
+/* Estilos para el input de peso */
+input[type="number"] {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
 }
