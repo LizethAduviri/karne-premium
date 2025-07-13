@@ -21,7 +21,7 @@
   <header>
     <img src="https://cdn-icons-png.flaticon.com/512/11312/11312406.png" alt="Logo Karne Premium" class="logo pulse" width="100" height="100" loading="lazy">
     <h1>Karne Premium</h1>
-    <p>Carnicería gourmet con los cortes más selectos de Tarija - Calidad y tradición desde 1985</p>
+    <p>Carnicería con los cortes más selectos de Tarija - Calidad y tradición desde 2000</p>
   </header>
 
   <!-- Navigation -->
@@ -29,9 +29,12 @@
     <ul>
       <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
       <li><a href="#productos"><i class="fas fa-utensils"></i> Productos</a></li>
-      <li><a href="#chef"><i class="fas fa-user-tie"></i> Nuestro Chef</a></li>
+      <li><a href="#chef"><i class="fas fa-user-tie"></i> Nuestro Personal</a></li>
       <li><a href="#pedido"><i class="fas fa-shopping-bag"></i> Pedidos</a></li>
       <li><a href="#contacto"><i class="fas fa-map-marker-alt"></i> Contacto</a></li>
+        <a href="#mapa" class="ubicacion-link">
+          <i class="fas fa-map"></i> Ubicacion
+        </a>
     </ul>
   </nav>
 
@@ -58,7 +61,7 @@
     </video>
     <div class="video-overlay">
       <h2>Excelencia en cada corte</h2>
-      <p>Descubre nuestra selección de carnes maduradas y cortes premium, seleccionados artesanalmente para los paladares más exigentes</p>
+      <p>Descubre nuestra selección de carnes selectas y cortes premium, seleccionados con una capacidad de experiencia con 20 años para los paladares más exigentes</p>
     </div>
   </section>
 
@@ -69,17 +72,17 @@
       <div class="valor-card">
         <i class="fas fa-leaf"></i>
         <h3>Origen Natural</h3>
-        <p>Nuestros animales son criados en pastizales naturales de Tarija, sin hormonas ni antibióticos, garantizando carne 100% orgánica.</p>
+        <p>Alta genética. Máxima calidad. El sabor comienza en el origen.</p>
       </div>
       <div class="valor-card">
         <i class="fas fa-clock"></i>
-        <h3>Maduración Controlada</h3>
-        <p>Cada corte pasa por nuestro proceso exclusivo de maduración en cámaras especiales entre 21 y 28 días para máxima terneza.</p>
+        <h3>Seleccion Controlada</h3>
+        <p>Buena genetica. Confinamiento controlado. Nuestra carne es el resultado de una crianza especializada en Santa Cruz, donde cada corte nace para superar expectativas.</p>
       </div>
       <div class="valor-card">
         <i class="fas fa-award"></i>
-        <h3>Certificación Premium</h3>
-        <p>Certificados por el Instituto Boliviano de Calidad Carnica con el sello Oro por nuestros estándares de excelencia.</p>
+        <h3>Objetivo</h3>
+        <p>Nuestro compromiso es ofrecerte carne premium de la más alta calidad, criada bajo estrictos estándares de bienestar animal, nutrición balanceada y genética superior. Cuidamos cada etapa del proceso, desde el campo hasta tu mesa, para que disfrutes de un sabor inigualable y seguro.</p>
       </div>
     </div>
   </section>
@@ -105,16 +108,18 @@
   <section class="chef" id="chef">
     <div class="chef-container">
       <div class="chef-img">
-        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chef Juan Pérez">
+        <img src="/carnicero.jpg" alt="Chef Juan Pérez">
       </div>
       <div class="chef-info">
-        <h2>Conoce a nuestro Maestro Carnicero</h2>
-        <p>Con más de 25 años de experiencia, el Chef Juan Pérez selecciona personalmente cada corte que llega a su mesa. Formado en las mejores escuelas de Argentina y Brasil, su expertise garantiza la máxima calidad en cada pieza.</p>
-        <p>"En Karne Premium no vendemos carne, ofrecemos una experiencia gastronómica. Cada corte cuenta una historia de dedicación y pasión por el arte carnicero."</p>
-        <div class="chef-firma">Chef Juan Pérez</div>
+        <h2>Conoce a nuestro Maestro En Cortes Premium</h2>
+        <p>Con más de 20 años de experiencia, Álvaro es mucho más que un cortador premium: es un verdadero experto en todo el proceso, desde el campo hasta tu mesa. Su conocimiento en ganadería, desposte, distribución y cortes premium lo convierten en una figura clave dentro de nuestra propuesta de calidad.
+Formado con pasión y dedicación, Álvaro selecciona personalmente cada pieza, asegurando frescura, precisión que marca la diferencia. Gracias a él, cada corte que ofrecemos no solo tiene sabor, sino historia, técnica y compromiso con la excelencia.</p>
+        <p>"Cada corte bien hecho es el resultado de años de respeto, técnica y amor por la carne.”</p> 
+        <p>“Cada pieza que entregamos es el resultado de años de experiencia y compromiso.”</p>
+        <div class="chef-firma">Alvaro Valeriano</div>
       </div>
     </div>
-  </section>
+  </section>
 
   <!-- Formulario de Pedido -->
   <section class="pedido" id="pedido">
@@ -140,14 +145,50 @@
           <label>Método de Entrega</label>
           <div class="form-options">
             <div class="form-option">
-              <input type="radio" id="delivery" name="entrega" value="delivery" checked>
-              <label for="delivery"><i class="fas fa-motorcycle form-option-icon"></i> Delivery (30 Bs)</label>
+              <input type="radio" id="recoger" name="entrega" value="recoger" checked>
+              <label for="recoger"><i class="fas fa-store form-option-icon"></i> Recoger en Tienda (0 Bs)</label>
             </div>
             <div class="form-option">
-              <input type="radio" id="recoger" name="entrega" value="recoger">
-              <label for="recoger"><i class="fas fa-store form-option-icon"></i> Recoger en Tienda</label>
+              <input type="radio" id="delivery-tarija" name="entrega" value="delivery-tarija">
+              <label for="delivery-tarija"><i class="fas fa-motorcycle form-option-icon"></i> Delivery en Tarija (15-30 Bs)</label>
+            </div>
+            <div class="form-option">
+              <input type="radio" id="bus" name="entrega" value="bus">
+              <label for="bus"><i class="fas fa-bus form-option-icon"></i> Envío en Bus (15-30 Bs)</label>
+            </div>
+            <div class="form-option">
+              <input type="radio" id="avion" name="entrega" value="avion">
+              <label for="avion"><i class="fas fa-plane form-option-icon"></i> Envío por Avión (Consultar precio)</label>
             </div>
           </div>
+        </div>
+        
+        <div class="form-group" id="zona-container" style="display:none;">
+          <label for="zona">Zona/Departamento</label>
+          <select id="zona" name="zona">
+            <option value="">Seleccione una zona</option>
+            <optgroup label="Tarija">
+              <option value="centro">Centro (15 Bs)</option>
+              <option value="norte">Zona Norte (20 Bs)</option>
+              <option value="sur">Zona Sur (20 Bs)</option>
+              <option value="alejada">Zonas Alejadas (30 Bs)</option>
+            </optgroup>
+            <optgroup label="Otros Departamentos">
+              <option value="la paz">La Paz</option>
+              <option value="cochabamba">Cochabamba</option>
+              <option value="santa cruz">Santa Cruz</option>
+              <option value="potosi">Potosí</option>
+              <option value="oruro">Oruro</option>
+              <option value="sucre">Sucre</option>
+              <option value="beni">Beni</option>
+              <option value="pando">Pando</option>
+            </optgroup>
+          </select>
+        </div>
+        
+        <div class="form-group" id="peso-container" style="display:none;">
+          <label for="peso">Peso aproximado del pedido (kg)</label>
+          <input type="number" id="peso" min="0.1" step="0.1" placeholder="Ej: 2.5">
         </div>
         
         <div class="form-group">
@@ -183,8 +224,12 @@
         <img src="https://cdn-icons-png.flaticon.com/512/11312/11312406.png" alt="Logo Karne Premium" class="footer-logo">
         <p>La mejor selección de carnes premium en Tarija, con estándares de calidad internacional.</p>
         <p><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 - 19:00</p>
+      
+      <!-- Más abajo en el mismo footer, añade un id al iframe -->
+      <div class="mapa-container" id="mapa">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.4567890123456!2d-64.738074!3d-21.533149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDMxJzU5LjMiUyA2NMKwNDQnMTcuMSJX!5e0!3m2!1ses!2sbo!4v1620000000000!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </section>
+      </div>
+          </section>
 
         <div class="footer-social">
           <a href="https://www.facebook.com/liz.aduviri.880637" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -197,7 +242,7 @@
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#productos">Productos</a></li>
-          <li><a href="#chef">Nuestro Chef</a></li>
+          <li><a href="#chef">Nuestro Personal</a></li>
           <li><a href="#pedido">Cómo Pedir</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
