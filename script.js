@@ -1,4 +1,5 @@
 
+
 // Base de datos de productos premium
 const productos = [
   {
@@ -6,73 +7,73 @@ const productos = [
     nombre: "Ribeye Angus",
     precio: 85,
     categoria: "premium",
-    imagen: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    imagen: "https://i.pinimg.com/736x/48/65/f0/4865f00f89d4ba8ebcbb1925519c8c27.jpg",
     descripcion: "Corte premium con marmoleo grado 4, madurado 28 días",
-    badge: "TOP SELLER"
+    badge: "PREMIUM"
   },
-  {
+ {
     id: 2,
-    nombre: "Lomo de Res",
+    nombre: "costillar de Res",
     precio: 65,
     categoria: "res",
-    imagen: "https://images.unsplash.com/photo-1618841507238-4f5c6b2b1c1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    descripcion: "Corte tierno, madurado 21 días, ideal para filetes",
+    imagen: "https://i.pinimg.com/736x/c0/8c/21/c08c217dd31c04790e938153b4f15a46.jpg",
+    descripcion: "Corte tierno, madurado 21 días, ideal para parrilla",
     badge: "RECOMENDADO"
-  },
+  },
   {
     id: 3,
-    nombre: "Pechuga de Pollo Orgánico",
+    nombre: "Pechuga de Pollo",
     precio: 35,
     categoria: "pollo",
-    imagen: "https://images.unsplash.com/photo-1604977048617-3ab47445752b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    descripcion: "Pollo criado libre de jaulas, alimentación natural",
+    imagen: "https://i.pinimg.com/736x/16/1b/6c/161b6c43d47a4cba4ad24e92f486b616.jpg",
+    descripcion: "Ideal para platos a la plancha, a la parrilla o al horno, es una fuente rica en proteínas y baja en grasas, perfecta para una alimentación equilibrada sin sacrificar el sabor.",
     badge: "ORGÁNICO"
   },
   {
     id: 4,
-    nombre: "Costillas de Cerdo BBQ",
+    nombre: "Costillas de Cerdo",
     precio: 45,
     categoria: "cerdo",
-    imagen: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    imagen: "https://i.pinimg.com/736x/00/e2/a4/00e2a462b3ff3da56c23c6f31b77a8ef.jpg",
     descripcion: "Corte especial para parrilla, con marinada incluida",
     badge: "PROMO"
   },
   {
     id: 5,
-    nombre: "Wagyu Boliviano",
+    nombre: "picaña",
     precio: 120,
     categoria: "premium",
-    imagen: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    imagen: "https://i.pinimg.com/736x/5b/02/05/5b02051394969c45d660c7304d3a5635.jpg",
     descripcion: "Exclusivo corte con marmoleo grado 5, edición limitada",
     badge: "EXCLUSIVO"
   },
   {
     id: 6,
-    nombre: "Entraña Premium",
+    nombre: "Blandos",
     precio: 70,
     categoria: "res",
-    imagen: "https://images.unsplash.com/photo-1618841507238-4f5c6b2b1c1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    descripcion: "Corte jugoso con vetas de grasa, maduración 25 días",
-    badge: "CHEF'S CHOICE"
+    imagen: "https://i.pinimg.com/1200x/3d/0b/dc/3d0bdca3e56d7644405c2259f342d778.jpg",
+    descripcion: "Cortes jugoso y blando",
+    badge: "TERNEZA"
   },
   {
     id: 7,
-    nombre: "Chorizo Artesanal",
+    nombre: "blandos de cerdo",
     precio: 40,
     categoria: "cerdo",
-    imagen: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    descripcion: "Elaborado con especias tradicionales, ahumado natural",
+    imagen: "https://i.pinimg.com/1200x/bf/e3/2c/bfe32cc8d1c853974c3531b4818c6a0d.jpg",
+    descripcion: "blandos para horno o para algun plato tradicional boliviano",
     badge: "ARTESANAL"
   },
   {
     id: 8,
-    nombre: "Pollo de Campo",
+    nombre: "Pollo",
     precio: 30,
     categoria: "pollo",
-    imagen: "https://images.unsplash.com/photo-1604977048617-3ab47445752b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    descripcion: "Criado al aire libre, textura firme y sabor intenso",
+    imagen: "https://i.pinimg.com/736x/2d/a0/32/2da032c9780328c4ec17af2cfdd9b2a7.jpg",
+    descripcion: "es ideal para las recetas que nos unen en familia: desde un sabroso ají de pollo, un reconfortante chairo, hasta el clásico pollo al horno con papas del domingo.",
     badge: "NATURAL"
-  }
+  }
 ];
 
 // Variables globales
@@ -271,7 +272,18 @@ document.getElementById('telefono').addEventListener('input', function(e) {
 });
 
 // Finalizar compra
-DOM.finalizarCompra.addEventListener('click', enviarPedidoWhatsApp);
+// Por esta:
+DOM.finalizarCompra.addEventListener('click', function(e) {
+  e.preventDefault();
+  // Cierra el carrito
+  DOM.carrito.classList.remove('visible');
+  // Desplázate a la sección de pedidos
+  document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' });
+  // Enfoca el primer campo del formulario
+  setTimeout(() => {
+    document.getElementById('nombre').focus();
+  }, 500);
+});
 DOM.formularioPedido.addEventListener('submit', function(e) {
   e.preventDefault();
   enviarPedidoWhatsApp();
@@ -289,6 +301,8 @@ function enviarPedidoWhatsApp() {
   const notas = document.getElementById('notas').value.trim();
   const metodoEntrega = document.querySelector('input[name="entrega"]:checked').value;
   const empaque = document.querySelector('input[name="empaque"]:checked').value;
+  const zona = document.getElementById('zona').value;
+  const peso = document.getElementById('peso').value;
   
   // Validación
   if (!nombre || !telefono || !direccion) {
@@ -305,10 +319,42 @@ function enviarPedidoWhatsApp() {
     return;
   }
   
-  // Calcular total
+  // Calcular total productos
   let total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
-  if (metodoEntrega === 'delivery') total += 30;
+  
+  // Calcular costo de empaque
   if (empaque === 'premium') total += 50;
+  
+  // Calcular costo de envío
+  let costoEnvio = 0;
+  let metodoEnvioTexto = '';
+  
+  switch(metodoEntrega) {
+    case 'delivery-tarija':
+      switch(zona) {
+        case 'centro': costoEnvio = 15; break;
+        case 'norte': 
+        case 'sur': costoEnvio = 20; break;
+        case 'alejada': costoEnvio = 30; break;
+        default: costoEnvio = 20;
+      }
+      metodoEnvioTexto = `Delivery en Tarija (${zona ? zona : 'zona no especificada'}) - ${costoEnvio} Bs`;
+      break;
+      
+    case 'bus':
+      costoEnvio = peso >= 5 ? 30 : 15;
+      metodoEnvioTexto = `Envío en Bus (${peso ? peso+' kg' : 'peso no especificado'}) - ${costoEnvio} Bs`;
+      break;
+      
+    case 'avion':
+      metodoEnvioTexto = `Envío por Avión (Consultar precio según destino y peso)`;
+      break;
+      
+    default: // recoger
+      metodoEnvioTexto = `Recoger en tienda - 0 Bs`;
+  }
+  
+  total += costoEnvio;
   
   // Formatear productos
   const productosMsg = carrito.map(item => {
@@ -321,7 +367,9 @@ function enviarPedidoWhatsApp() {
     `*👤 Cliente:*%0A${encodeURIComponent(nombre)}%0A%0A` +
     `*📞 Teléfono:*%0A${encodeURIComponent(telefono)}%0A%0A` +
     `*📍 Dirección:*%0A${encodeURIComponent(direccion)}%0A%0A` +
-    `*🚚 Entrega:*%0A${metodoEntrega === 'delivery' ? 'Delivery (+30 Bs)' : 'Recoger en tienda'}%0A%0A` +
+    `*🚚 Método de Entrega:*%0A${encodeURIComponent(metodoEnvioTexto)}%0A%0A` +
+    (zona && metodoEntrega === 'delivery-tarija' ? `*🗺️ Zona:*%0A${encodeURIComponent(zona)}%0A%0A` : '') +
+    (peso && (metodoEntrega === 'bus' || metodoEntrega === 'avion') ? `*⚖️ Peso:*%0A${encodeURIComponent(peso)} kg%0A%0A` : '') +
     `*🎁 Empaque:*%0A${empaque === 'premium' ? 'Premium (+50 Bs)' : 'Estándar'}%0A%0A` +
     `*🛒 Productos:*%0A${productosMsg}%0A%0A` +
     `*💰 Total:*%0A${total.toFixed(2)} Bs%0A%0A` +
@@ -371,5 +419,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!DOM.carrito.contains(e.target) && e.target !== DOM.btnCarrito) {
       DOM.carrito.classList.remove('visible');
     }
+  });
+   // Mostrar/ocultar campos según método de envío
+   document.querySelectorAll('input[name="entrega"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      const zonaContainer = document.getElementById('zona-container');
+      const pesoContainer = document.getElementById('peso-container');
+      
+      if (this.value === 'delivery-tarija') {
+        zonaContainer.style.display = 'block';
+        pesoContainer.style.display = 'none';
+      } else if (this.value === 'bus' || this.value === 'avion') {
+        zonaContainer.style.display = 'none';
+        pesoContainer.style.display = 'block';
+      } else {
+        zonaContainer.style.display = 'none';
+        pesoContainer.style.display = 'none';
+      }
+    });
   });
 });
